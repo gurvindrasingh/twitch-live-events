@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+	background-color: #161c20 !important;
+	font-family: Muli,sans-serif;
+}
+
+.login-header h2{
+	color: #55c3a2;
+    font-size: 58px;
+    line-height: 66px;
+    font-weight: 900;
+}
+.login-header p{
+	color: #bdc2c4;
+    font-size: 18px;
+}
+.login-btn{
+	background-color: #6441a5 !important;
+	border-color: #682adc !important;
+	color: #fff !important;
+	margin-left: 200px;
+    margin-top: 15px;
+}
+.login-btn:hover{
+	background-color: #4a1f9a !important;
+}
+.login-btn img{
+	width: 20px;
+}
+.container.login .row{
+	margin-top: 200px;
+}
+.login-alert{
+	width: 41%;
+    height: 41px;
+    padding: 9px !important;
+    margin-left: 181px;
+    margin-top: 69px;
+}
+.container-webapp{
+	color: #fff;
+}
+.stream-dropdown{
+	float: right;
+	padding: 10px;
+}
+.stream-dropdown img{
+	width: 20px;
+}
+.stream-dropdown button{
+	background-color: #161c20 !important;
+    border-color: #161c20;
+}
+.stream-dropdown .dropdown-menu{
+	background-color: #2b383f !important;
+    border-color: #161c20;
+    color: #fff;
+    width: 92%
+}
+.stream-dropdown .dropdown-menu a{
+	background-color: #2b383f !important;
+    border-color: #161c20;
+    color: #fff;
+}
+#streamer-profile{
+	display: none;
+}
+#streamer-profile div{
+	margin-top: 6px;
+}
+#streamer-profile div img{
+	width: 48px;
+    border-radius: 3px;
+    padding: 3px;
+}
+#streamer-profile div p{
+	font-weight: bold;
+    font-size: 22px;
+    margin-left: 34px;
+    margin-top: 21px;
+    float: left;
+}
+#streamer-profile div button{
+	margin-top: 10px;
+    padding: 0px 8px 0px 8px;
+}
+#streamer-profile .streamer-profile-container{
+    border: 1px solid #808284;
+    border-radius: 6px;
+}
+#streamer-profile .streamer-profile-wrapper{
+	list-style-type: none;
+}
+#streamer-profile .streamer-profile-wrapper span{
+	padding: 10px;
+}
+#streamer-profile .streamer-profile-wrapper ul{
+	list-style-type: none;
+}
+#sidebar-wrapper{
+	padding: 13px 13px 0px 0px;
+    margin-top: 10px;
+}
+#sidebar-wrapper .sidebar-nav{
+	list-style-type: none;
+}
+#sidebar-wrapper .sidebar-nav li img{
+    width: 48px;
+    border-radius: 3px;
+    padding: 3px;
+}
+#sidebar-wrapper .sidebar-nav li span{
+    padding-left: 15px;
+    color: #fff;
+}
+#sidebar-wrapper .sidebar-nav li span{
+	padding-left: 15px;
+    color: #fff;
+}
+#sidebar-wrapper .sidebar-nav li{
+	margin-top: 10px;
+}
+#sidebar-wrapper .sidebar-nav li:hover{
+    background-color: #212527;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#sidebar-wrapper .sidebar-nav li.active{
+	background-color: #3f4244;
+    border-radius: 3px;
+}
+
+#event-wrapper{
+	padding: 13px 13px 0px 0px;
+    margin-top: 20px;
+}
+#event-wrapper ul.event-nav {
+    list-style-type: none;
+}
+#event-wrapper .event-nav li{
+	margin-top: 4px;
+    background-color: #212527;
+    padding: 2px 14px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+#event-wrapper .event-nav li:hover{
+    background-color: #212527;
+    border-radius: 3px;
+}
+#event-wrapper .event-nav li a:hover{
+	text-decoration: none !important;
+}
+.favourite-streamers, .favourite-streamer-events{
+    border: 1px solid #808284;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+.home-btn{
+	margin-top: 16px;
+    padding: 0px 8px !important;
+    background-color: #191d1f !important;
+    border-color: #fff !important;
+}
+.streamer-events{
+    border: 1px solid #808284;
+    border-radius: 1px;
+}
+#event-wrapper-inside{
+	padding: 13px 13px 0px 0px;
+    margin-top: 10px;
+}
+#event-wrapper-inside ul.event-nav {
+    list-style-type: none;
+}
+#event-wrapper-inside .event-nav ul#event-list {
+    padding: 5px !important;
+}
+#event-wrapper-inside .event-nav li{
+	margin-top: 4px;
+    background-color: #212527;
+    padding: 2px 14px;
+    font-size: 14px;
+    border-radius: 3px !important;
+}
+#event-wrapper-inside .event-nav li:hover{
+	background-color: #212527;
+	border-radius: 10px;
+}
+.a-streamer{
+    float: right;
+    margin: 6px 12px !important;
+    padding: 0px 7px !important;
+}
+.streamer-container{
+    margin-top: 15px;
+}
+.streamer-container iframe{
+    border: 1px solid #808284;
+    border-radius: 2px;
+}
+.my-favourites{
+    text-align: center;
+    padding-top: 13px;
+}
+#fav-search-list button{
+    float: right;
+}
+#fav-search-list li{
+    padding: 5px 0px;
+    border-bottom: 1px solid #43474a;
+}
+.loader{
+    width: 27px;
+    margin: 0px 0px 8px 11px;
+    display: none;
+}
