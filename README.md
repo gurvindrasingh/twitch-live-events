@@ -1,5 +1,5 @@
  # Twitch interview task Project
- This platform provides Twitch live events, streamings and chat.
+ This platform provides Twitch live events, streamings and chat. [Project link](http://13.59.18.193)
 
  ## Design Assumptions
 
