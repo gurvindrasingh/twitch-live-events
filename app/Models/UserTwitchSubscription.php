@@ -42,7 +42,7 @@ class UserTwitchSubscription extends Model
      * Subsribe to twitch events follows and streams
      *
      * @param int $twitch_id 
-     * @return array $subscriptions on success 
+     * @return number $time_left on success 
      * @return boolean false on fail
      */
     public static function subscribe($twitch_id){
@@ -100,8 +100,9 @@ class UserTwitchSubscription extends Model
                     return false;
                 }               
 
+                $expire_sec = 863700;
                 //add subscriptions
-                $expire_time = Carbon::now()->addSeconds(863700);
+                $expire_time = Carbon::now()->addSeconds($time_left);
 
                 //subscribe to follows
                 $params_follows['user_id'] = $user->id;
@@ -113,9 +114,6 @@ class UserTwitchSubscription extends Model
                 $follows = Self::create($params_follows);
                 $subscriptions[]=$follows->id;
                 
-                //add subscriptions
-                $expire_time = Carbon::now()->addSeconds(863700);
-
                 //subscribe to follows
                 $params_follows['user_id'] = $user->id;
                 $params_follows['twitch_id'] = $twitch_id;
@@ -136,6 +134,11 @@ class UserTwitchSubscription extends Model
                 $streams = Self::create($params_streams);
                 $subscriptions[]=$streams->id;
                 //subscribe here 
+            }else{
+                $time=Self::find($subscriptions[0]);
+                $carbon = Carbon::now();
+                $finishTime = new Carbon($time->expire_time);
+                $expire_sec = $finishTime->diffInSeconds($carbon);
             }
 
             //unsubscribe other old subscriptions
@@ -159,7 +162,8 @@ class UserTwitchSubscription extends Model
                     $other_subscription->delete();   
                 }
             }
-            return $subscriptions;
+            $time_left = $expire_sec*1000;
+            return $time_left;
         }catch(\Exception $e){
             return false;
         }

@@ -145,8 +145,6 @@ class UserController extends Controller
      * @var object $user
      * @var object $favourites
      * @var int $most_fav_id
-     * @var object $time
-     * @var object $carbon, $finishTime
      * @var string $time_left
      * @return home view
      */
@@ -159,12 +157,7 @@ class UserController extends Controller
         $time_left=0;
         if(isset($favourites[0])){
             $most_fav_id = $favourites[0]->twitch_id;
-            $subscribe = UserTwitchSubscription::subscribe($most_fav_id);
-            $time=UserTwitchSubscription::find($subscribe[0]);
-            $carbon = Carbon::now();
-            $finishTime = new Carbon($time->expire_time);
-            $totalDuration = $finishTime->diffInSeconds($carbon);
-            $time_left = $totalDuration*1000;
+            $time_left = UserTwitchSubscription::subscribe($most_fav_id);
         }
         
         //return view
@@ -176,9 +169,6 @@ class UserController extends Controller
      *
      * @param object $request
      * @var object $favourite
-     * @var array $subscribe
-     * @var object $time
-     * @var object $carbon, $finishTime
      * @var string $time_left
      * @return Http 200
      */
@@ -197,13 +187,8 @@ class UserController extends Controller
         if(!$favourite){
             return response()->json(array('success'=>0,'msg'=>'This user is not in your favourite list'), 200);
         }
-        $subscribe = UserTwitchSubscription::subscribe($params['twitch_id']);
-        if($subscribe){
-            $time = UserTwitchSubscription::find($subscribe[0]);
-            $carbon = Carbon::now();
-            $finishTime = new Carbon($time->expire_time);
-            $totalDuration = $finishTime->diffInSeconds($carbon);
-            $time_left = $totalDuration*1000;
+        $time_left = UserTwitchSubscription::subscribe($params['twitch_id']);
+        if($time_left){
             return response()->json(array('success'=>1,'msg'=>'Subscribed','time'=>$time_left), 200);
         }else{
             return response()->json(array('success'=>0,'msg'=>'Failed to subscribe'), 200);
@@ -215,21 +200,12 @@ class UserController extends Controller
      *
      * @param int $id
      * @var object $streamer
-     * @var array $subscribe
-     * @var object $time
-     * @var object $carbon, $finishTime
      * @var string $time_left
      * @return streamer view
      */
     public function streamer($id){
         $streamer = Favourite::where('twitch_id',$id)->first();
-        $subscribe = UserTwitchSubscription::subscribe($id);
-        $time=UserTwitchSubscription::find($subscribe[0]);
-        $carbon = Carbon::now();
-        $finishTime = new Carbon($time->expire_time);
-        $totalDuration = $finishTime->diffInSeconds($carbon);
-        $time_left = $totalDuration*1000;
-
+        $time_left = UserTwitchSubscription::subscribe($id);
         //return view
         return view('twitch.streamer',compact('streamer','time_left'));
     }
