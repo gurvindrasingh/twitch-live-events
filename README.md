@@ -147,7 +147,7 @@ These are the steps to deploy this app on *AWS*:
 
 ##### 2. Where do you see bottlenecks in your proposed architecture and how would you approach scaling this app starting from 100 reqs/day to 900MM reqs/day over 6 months?
 ##### Answer:
-* MySQL database performance : The storage of users and their favorites in database will be impacted.this database is very strong but performace will be impacted with a larger number of users, corresponding favorites and subscritpions.
+* MySQL database performance : The storage of users and their favorites in database will be impacted. This database is very strong but performace will be impacted with a larger number of users, corresponding favorites and events subscritpions.
 -Solution: Stored procedures can be used. NoSQL or other high performace databases can be considered.
 * User's Favorite list: Pagination can be introduced.
 * On the AWS side, it can be configured with a variable number of EC2 instances. The load balancer will handle the EC2 instances, it will init or put them to sleep as per need.
