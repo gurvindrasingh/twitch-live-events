@@ -110,7 +110,7 @@ These are the steps to deploy this app on *AWS*:
         - PUSHER_APP_SECRET=XXXXXXXXXXXXXXX
         - PUSHER_APP_CLUSTER=XXX
     ```
-     4. Login to [Twitch Developer](https://dev.twitch.tv/), go to [Twitch Console](https://dev.twitch.tv/console), register you application ( make sure to set OAuth Redirect URL as your-domain followed by **/logged** end point - for instance: ```http://localhost/logged``` ) and finally generate Client Secret. Copy Client Id and Client Secret and paste into .env as follows:
+     4. Login to [Twitch Developer](https://dev.twitch.tv/), go to [Twitch Console](https://dev.twitch.tv/console), register you application ( make sure to set **OAuth Redirect URL Evenet Handler Callback** as your-domain followed by **/logged** end point - for instance: ```http://localhost/logged``` ) and finally generate Client Secret. Copy Client Id and Client Secret and paste into .env as follows:
     ```
         - TWITCH_CLIENT_ID=XXXXXXXXXXXXXX
         - TWITCH_CLIENT_SECRET=XXXXXXXXXXXX
