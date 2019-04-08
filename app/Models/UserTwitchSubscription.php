@@ -102,7 +102,7 @@ class UserTwitchSubscription extends Model
 
                 $expire_sec = 863700;
                 //add subscriptions
-                $expire_time = Carbon::now()->addSeconds($time_left);
+                $expire_time = Carbon::now()->addSeconds($expire_sec);
 
                 //subscribe to follows
                 $params_follows['user_id'] = $user->id;
