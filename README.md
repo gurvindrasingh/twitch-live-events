@@ -124,7 +124,7 @@ These are the steps to deploy this app on *AWS*:
  * Give apache write access to the storage and bootstrap/cache folder
  * Give 777 permissions to public folder:
  ```
- $ sudo chmod -R 777 /public
+ $ sudo chmod -R 755 folder-path
  ```
  * Generate Application key:
  ```
